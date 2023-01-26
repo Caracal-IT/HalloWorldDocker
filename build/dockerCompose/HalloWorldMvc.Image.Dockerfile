@@ -3,6 +3,7 @@ WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
+ARG VERSION
 FROM docker.io/divigraph/demo1_test:${VERSION} AS build
 
 FROM build AS publish
