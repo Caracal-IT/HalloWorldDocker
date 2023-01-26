@@ -21,6 +21,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{6DB6FD80-3
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HalloWorldDocker.Utilities.Tests.Unit", "test\libs\HalloWorldDocker.Utilities.Tests.Unit\HalloWorldDocker.Utilities.Tests.Unit.csproj", "{8B33216A-4F26-4183-B859-CC0F60BD5C25}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "certs", "certs", "{CCB46293-A335-49AD-9655-3E88673C2A6C}"
+	ProjectSection(SolutionItems) = preProject
+		certs\certificate.pem = certs\certificate.pem
+		certs\csr.csr = certs\csr.csr
+		certs\dockerdemo.pfx = certs\dockerdemo.pfx
+		certs\key.pem = certs\key.pem
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

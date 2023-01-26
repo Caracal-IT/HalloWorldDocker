@@ -17,4 +17,6 @@ RUN dotnet publish "HelloWorldDocker.Web.Mvc.csproj" -c Release -o /app/publish
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+COPY ["certs/dockerdemo.pfx", "https/dockerdemo.pfx"]
+
 ENTRYPOINT ["dotnet", "HelloWorldDocker.Web.Mvc.dll"]
