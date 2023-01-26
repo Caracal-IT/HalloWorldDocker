@@ -25,7 +25,9 @@ pipeline {
             }
         }
         stage('Publish') {
-            sh 'docker-compose -f build/dockerCompose/docker-compose.prod.yml build mvcdocker'
+            steps {
+                sh 'docker-compose -f build/dockerCompose/docker-compose.prod.yml build mvcdocker'
+            }
         }
         
         /*
