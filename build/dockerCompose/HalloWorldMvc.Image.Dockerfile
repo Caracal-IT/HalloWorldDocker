@@ -3,7 +3,7 @@ WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
-FROM docker.io/divigraph/demo1_test:v${BUILD_NUMBER} AS build
+FROM docker.io/divigraph/demo1_test:v$BUILD_NUMBER AS build
 
 FROM build AS publish
 WORKDIR /build/src/HelloWorldDocker.Web.Mvc
