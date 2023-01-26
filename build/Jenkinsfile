@@ -19,6 +19,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'docker-compose -f build/dockerCompose/docker-compose.prod.yml up --build mvctest'
+                error 'Tests Fail'
             }
         }
                 
