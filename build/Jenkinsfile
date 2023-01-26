@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'docker-compose -f dockerCompose/docker-compose.yml build mvc'
+                sh 'docker-compose -f build/dockerCompose/docker-compose.yml build mvc'
             }
         }
         stage('Login') {
