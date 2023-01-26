@@ -5,27 +5,21 @@ services:
     image: divigraph/demo1_test:v${BUILD_NUMBER}
     build:
       context: ../..
-      dockerfile: build/dockerCompose/HalloWorldMvc.Build.Dockerfile  
-        
+      dockerfile: build/dockerCompose/HalloWorldMvc.Build.Dockerfile 
   mvctest:
       image: divigraph/demo1_test_unit:v${BUILD_NUMBER}
       build:
         context: ../..
-        dockerfile: build/dockerCompose/HalloWorldMvc.Unit.Dockerfile
-        args:          
-        - VERSION:v${BUILD_NUMBER}
+        dockerfile: build/dockerCompose/HalloWorldMvc.Unit.Dockerfile        
   mvcdocker:
     image: divigraph/demo1:v${BUILD_NUMBER}
     build:
       context: ../..
-      dockerfile: build/dockerCompose/HalloWorldMvc.Image.Dockerfile
-      args:
-        - VERSION:v${BUILD_NUMBER}
+      dockerfile: build/dockerCompose/HalloWorldMvc.Image.Dockerfile      
     ports:
       - "5050:80"
       - "5151:443"
-    environment:
-      - BUILD_NUMBER=${BUILD_NUMBER}
+    environment:      
       - ASPNETCORE_ENVIRONMENT=Release
       - ASPNETCORE_URLS=https://+:443;http://+:80
       - ASPNETCORE_HTTPS_PORT=5151

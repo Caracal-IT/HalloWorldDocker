@@ -15,15 +15,26 @@ pipeline {
             steps {
                 sh 'docker-compose -f build/dockerCompose/docker-compose.prod.yml build mvc'
             }
-        }        
+        }
+        stage('Test') {
+            steps {
+                script {
+                    def test_result = sh(script: 'docker-compose -f build/dockerCompose/docker-compose.prod.yml build --build-arg VERSION="${env.BUILD_NUMBER}" mvctest', returnStatus: true) 
+                    if (test_result != 0) { error 'Test Build Failed: HalloWorldDocker.Utilities.Tests.Unit' }
+                }
+            }
+        }         
         stage('Test') {
             steps {
                 script {
                     def test_result = sh(script: 'docker-compose -f build/dockerCompose/docker-compose.prod.yml run mvctest', returnStatus: true) 
-                    if (test_result != 0) { error 'Tests failed: HalloWorldDocker.Utilities.Tests.Unit' }
+                    if (test_result != 0) { error 'Tests Failed: HalloWorldDocker.Utilities.Tests.Unit' }
                 }
             }
-        }
+        } 
+        /*
+        build 
+        
         stage('Publish') {
             steps {
                 sh 'docker-compose -f build/dockerCompose/docker-compose.prod.yml build mvcdocker'
@@ -45,6 +56,6 @@ pipeline {
             steps {
                 sh 'docker image rm divigraph/demo1:v$BUILD_NUMBER'
             }
-         }
+         }*/
     }
 }
