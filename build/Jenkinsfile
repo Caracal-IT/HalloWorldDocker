@@ -15,18 +15,11 @@ pipeline {
             steps {
                 sh 'docker-compose -f build/dockerCompose/docker-compose.prod.yml build mvc'
             }
-        }
-        stage('Test - Build') {
-            steps {
-                script { 
-                    def test_result = sh(script: 'docker-compose -f build/dockerCompose/docker-compose.prod.yml build mvctest', returnStatus: true) 
-                    if (test_result != 0) { error 'Tests failed: HalloWorldDocker.Utilities.Tests.Unit' }
-                }
-            }
-        }
+        }        
         stage('Test') {
             steps {
                 script { 
+                    echo("The current build number is ${env.BUILD_NUMBER}")
                     def test_result = sh(script: 'docker-compose -f build/dockerCompose/docker-compose.prod.yml run mvctest', returnStatus: true) 
                     if (test_result != 0) { error 'Tests failed: HalloWorldDocker.Utilities.Tests.Unit' }
                 }
