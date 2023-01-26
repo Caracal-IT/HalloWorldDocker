@@ -20,6 +20,6 @@ public class A_Greeter {
     var message = _greeter.Greet(bob);
     
     // Assert
-    message.Should().Be( $"Good morning {bob}");
+    message.Should().Be( $"ZZGood morning {bob}");
   }
 }
