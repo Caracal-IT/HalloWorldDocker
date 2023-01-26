@@ -19,12 +19,14 @@ pipeline {
         stage('Test') {
             steps {
                 script { 
-                    sh 'docker-compose -f build/dockerCompose/docker-compose.prod.yml run mvctest'
+                    def test_result = sh(script: 'docker-compose -f build/dockerCompose/docker-compose.prod.yml run mvctest', returnStatus: true) 
+                    if (test_result != 0) { error 'Tests failed: HalloWorldDocker.Utilities.Tests.Unit' }
                 }
             }
         }
         
-        /*        
+        /*
+        
         stage('Login') {
             steps {
                 sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
