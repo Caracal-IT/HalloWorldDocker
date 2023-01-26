@@ -16,7 +16,7 @@ pipeline {
                 sh 'docker-compose -f build/dockerCompose/docker-compose.prod.yml build mvc'
             }
         }
-        stage('Test') {
+        stage('Test Build') {
             steps {
                 script {
                     def test_result = sh(script: 'docker-compose -f build/dockerCompose/docker-compose.prod.yml build --build-arg VERSION="${env.BUILD_NUMBER}" mvctest', returnStatus: true) 
@@ -24,7 +24,7 @@ pipeline {
                 }
             }
         }         
-        stage('Test') {
+        stage('Test Run') {
             steps {
                 script {
                     def test_result = sh(script: 'docker-compose -f build/dockerCompose/docker-compose.prod.yml run mvctest', returnStatus: true) 
