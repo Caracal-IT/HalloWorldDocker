@@ -24,14 +24,7 @@ pipeline {
             }
         }
         
-        /*
-        
-        script { 
-                            def test_result = sh(script: 'docker-compose -f build/dockerCompose/docker-compose.prod.yml run mvctest', returnStatus: true) 
-                            if (test_result != 0) { error 'Tests failed' }
-                            
-                            echo "test " +  test_result
-                        }
+        /*        
         stage('Login') {
             steps {
                 sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
