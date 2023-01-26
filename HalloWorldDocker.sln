@@ -11,6 +11,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{3634C8FC-0
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "build\dockerCompose\docker-compose.dcproj", "{C89AF81C-96BB-46F2-B0BE-6CDA86B7FA74}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{082B1747-DEF1-41E9-8413-21DA3152704D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorldDocker.Web.Mvc", "src\HelloWorldDocker.Web.Mvc\HelloWorldDocker.Web.Mvc.csproj", "{BFBA1F3D-0F30-4E5D-9455-0B77A017142C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HalloWorldDocker.Utilities", "src\HalloWorldDocker.Utilities\HalloWorldDocker.Utilities.csproj", "{AF6DAC9B-2510-4F1C-8DB9-2D96FC7340CF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{6DB6FD80-3A3D-4B3F-940E-1A4AE37CCD80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HalloWorldDocker.Utilities.Tests.Unit", "test\libs\HalloWorldDocker.Utilities.Tests.Unit\HalloWorldDocker.Utilities.Tests.Unit.csproj", "{8B33216A-4F26-4183-B859-CC0F60BD5C25}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +28,24 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C89AF81C-96BB-46F2-B0BE-6CDA86B7FA74} = {F8A1DE1B-663E-4AD7-B9F9-0AB75E196056}
+		{082B1747-DEF1-41E9-8413-21DA3152704D} = {7E4F5CA6-780F-41A6-B0A0-31EB6D4A3516}
+		{BFBA1F3D-0F30-4E5D-9455-0B77A017142C} = {7E4F5CA6-780F-41A6-B0A0-31EB6D4A3516}
+		{AF6DAC9B-2510-4F1C-8DB9-2D96FC7340CF} = {082B1747-DEF1-41E9-8413-21DA3152704D}
+		{6DB6FD80-3A3D-4B3F-940E-1A4AE37CCD80} = {3634C8FC-089E-4AA7-BE15-E7AAB46EEA13}
+		{8B33216A-4F26-4183-B859-CC0F60BD5C25} = {6DB6FD80-3A3D-4B3F-940E-1A4AE37CCD80}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BFBA1F3D-0F30-4E5D-9455-0B77A017142C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFBA1F3D-0F30-4E5D-9455-0B77A017142C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFBA1F3D-0F30-4E5D-9455-0B77A017142C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFBA1F3D-0F30-4E5D-9455-0B77A017142C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF6DAC9B-2510-4F1C-8DB9-2D96FC7340CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF6DAC9B-2510-4F1C-8DB9-2D96FC7340CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF6DAC9B-2510-4F1C-8DB9-2D96FC7340CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF6DAC9B-2510-4F1C-8DB9-2D96FC7340CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B33216A-4F26-4183-B859-CC0F60BD5C25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B33216A-4F26-4183-B859-CC0F60BD5C25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B33216A-4F26-4183-B859-CC0F60BD5C25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B33216A-4F26-4183-B859-CC0F60BD5C25}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -1,26 +1,29 @@
 version: "3.9"
 services:
-  web:
-    image: divigraph/assess_mvc:${BUILD_NUMBER}
-    build:
-      context: ..
-      args:
-        - NODE_ENV=local
-      dockerfile: src/Caracal.Assess.Mvc/Dockerfile
-    ports:
-      - "5050:80"
-      - "5151:443"
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Release
-      - ASPNETCORE_URLS=https://+:443;http://+:80
-      - ASPNETCORE_HTTPS_PORT=5151
-      - ASPNETCORE_Kestrel__Certificates__Default__Password=password1
-      - ASPNETCORE_Kestrel__Certificates__Default__Path=/app/https/dockerdemo.pfx
+  mvc:
+    image: divigraph/demo_mvc:v${BUILD_NUMBER}
       
-  unittests:
-    image: mcr.microsoft.com/dotnet/sdk:7.0
-    volumes:
-      -  ..:/code
+  #web:
+  #  image: divigraph/assess_mvc:${BUILD_NUMBER}
+  #  build:
+  #    context: ..
+  #    args:
+  #      - NODE_ENV=local
+  #    dockerfile: src/Caracal.Assess.Mvc/Dockerfile
+  #  ports:
+  #    - "5050:80"
+  #    - "5151:443"
+  #  environment:
+  #    - ASPNETCORE_ENVIRONMENT=Release
+  #    - ASPNETCORE_URLS=https://+:443;http://+:80
+  #    - ASPNETCORE_HTTPS_PORT=5151
+  #    - ASPNETCORE_Kestrel__Certificates__Default__Password=password1
+  #    - ASPNETCORE_Kestrel__Certificates__Default__Path=/app/https/dockerdemo.pfx
+      
+  #unittests:
+  #  image: mcr.microsoft.com/dotnet/sdk:7.0
+  #  volumes:
+  #    -  ..:/code
       
       
         # https://msol.io/blog/tech/create-a-self-signed-ssl-certificate-with-openssl/
