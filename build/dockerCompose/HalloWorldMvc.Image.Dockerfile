@@ -1,10 +1,10 @@
-﻿FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
+﻿ARG VERSION
+FROM docker.io/divigraph/demo1_test:${VERSION} AS build
+
+FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
 WORKDIR /app
 EXPOSE 80
 EXPOSE 443
-
-ARG VERSION
-FROM docker.io/divigraph/demo1_test:${VERSION} AS build
 
 FROM build AS publish
 WORKDIR /build/src/HelloWorldDocker.Web.Mvc
