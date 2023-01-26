@@ -19,7 +19,7 @@ pipeline {
         stage('Test Build') {
             steps {
                 script {
-                    def test_result = sh(script: 'docker-compose -f build/dockerCompose/docker-compose.prod.yml build --build-arg VERSION=${env.BUILD_NUMBER} mvctest', returnStatus: true) 
+                    def test_result = sh(script: 'docker-compose -f build/dockerCompose/docker-compose.prod.yml build --build-arg VERSION=v${BUILD_NUMBER} mvctest', returnStatus: true) 
                     if (test_result != 0) { error 'Test Build Failed: HalloWorldDocker.Utilities.Tests.Unit' }
                 }
             }
