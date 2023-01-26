@@ -29,15 +29,12 @@ pipeline {
                 sh 'docker-compose -f build/dockerCompose/docker-compose.prod.yml build mvcdocker'
             }
         }
-        
-        /*
-        
-        stage('Login') {
+        stage('Login - Docker Hub') {
             steps {
                 sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
             }
         }
-        stage('Push') {
+        stage('Push - Docker Hub') {
 
             steps {
                 sh 'docker push divigraph/demo1:v$BUILD_NUMBER'
@@ -48,6 +45,6 @@ pipeline {
             steps {
                 sh 'docker image rm divigraph/demo1:v$BUILD_NUMBER'
             }
-         }*/
+         }
     }
 }
