@@ -12,9 +12,19 @@
     <None Include="docker-compose.override.yml">
       <DependentUpon>docker-compose.yml</DependentUpon>
     </None>
+    <None Include="docker-compose.prod.override.yml">
+      <DependentUpon>docker-compose.prod.yml</DependentUpon>
+    </None>
+    <None Include="docker-compose.prod.yml" />
     <None Include="docker-compose.yml" />
+    <None Include="HalloWorldMvc.Dockerfile" />
+    <None Include="HalloWorldMvc.Unit.Dockerfile" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\..\.dockerignore">
+      <Link>.dockerignore</Link>
+      <DependentUpon>Dockerfile</DependentUpon>
+    </Content>
     <Content Include=".dockerignore" />
     <Content Include="dev.env" />
   </ItemGroup>

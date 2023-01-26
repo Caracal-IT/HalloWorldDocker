@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{082B1747-D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorldDocker.Web.Mvc", "src\HelloWorldDocker.Web.Mvc\HelloWorldDocker.Web.Mvc.csproj", "{BFBA1F3D-0F30-4E5D-9455-0B77A017142C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HalloWorldDocker.Utilities", "src\HalloWorldDocker.Utilities\HalloWorldDocker.Utilities.csproj", "{AF6DAC9B-2510-4F1C-8DB9-2D96FC7340CF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HalloWorldDocker.Utilities", "src\libs\HalloWorldDocker.Utilities\HalloWorldDocker.Utilities.csproj", "{AF6DAC9B-2510-4F1C-8DB9-2D96FC7340CF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{6DB6FD80-3A3D-4B3F-940E-1A4AE37CCD80}"
 EndProject

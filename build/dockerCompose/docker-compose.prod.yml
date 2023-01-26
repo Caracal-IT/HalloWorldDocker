@@ -1,0 +1,24 @@
+version: "3.9"
+name: divigraph-demo-prod
+services:
+  mvc:
+    image: divigraph/demo1_test:latest
+    build:
+      context: ../..
+      dockerfile: build/dockerCompose/HalloWorldMvc.Dockerfile  
+        
+  mvctest:
+      image: divigraph/demo1_test_unit:latest
+      build:
+        context: ../..
+        dockerfile: build/dockerCompose/HalloWorldMvc.Unit.Dockerfile
+      volumes:
+        - C:\Development\Prototypes\Testing\src:/src
+        - C:\Development\Prototypes\Testing\test:/test
+        
+        
+        
+        #  docker-compose -f build/dockerCompose/docker-compose.prod.yml up mvctest
+        # docker-compose -f build/dockerCompose/docker-compose.prod.yml build mvctest  
+          
+          

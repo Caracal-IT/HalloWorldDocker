@@ -23,7 +23,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\..\src\HalloWorldDocker.Utilities\HalloWorldDocker.Utilities.csproj" />
+      <ProjectReference Include="..\..\..\src\libs\HalloWorldDocker.Utilities\HalloWorldDocker.Utilities.csproj" />
     </ItemGroup>
 
 </Project>

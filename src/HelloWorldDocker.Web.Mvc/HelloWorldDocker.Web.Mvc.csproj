@@ -13,9 +13,8 @@
       </Content>
     </ItemGroup>
 
-    <ItemGroup>
-      <ProjectReference Include="..\..\test\libs\HalloWorldDocker.Utilities.Tests.Unit\HalloWorldDocker.Utilities.Tests.Unit.csproj" />
-      <ProjectReference Include="..\HalloWorldDocker.Utilities\HalloWorldDocker.Utilities.csproj" />
+    <ItemGroup>      
+      <ProjectReference Include="..\libs\HalloWorldDocker.Utilities\HalloWorldDocker.Utilities.csproj" />
     </ItemGroup>
 
 </Project>
