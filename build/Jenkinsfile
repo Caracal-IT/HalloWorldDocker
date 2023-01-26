@@ -16,6 +16,12 @@ pipeline {
                 sh 'docker-compose -f build/dockerCompose/docker-compose.prod.yml build mvc'
             }
         }
+        stage('Test') {
+            steps {
+                sh 'docker-compose -f build/dockerCompose/docker-compose.prod.yml build mvctest'
+            }
+        }
+        
         
         /*
         stage('Login') {
