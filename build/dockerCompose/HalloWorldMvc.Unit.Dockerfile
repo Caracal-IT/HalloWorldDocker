@@ -1,4 +1,4 @@
-﻿FROM docker.io/divigraph/demo1_test:v$VERSION AS build
+﻿FROM docker.io/divigraph/demo1_test:$VERSION AS build
 
 WORKDIR /build/test
 COPY ["test/libs/HalloWorldDocker.Utilities.Tests.Unit/HalloWorldDocker.Utilities.Tests.Unit.csproj", "libs/HalloWorldDocker.Utilities.Tests.Unit/"]

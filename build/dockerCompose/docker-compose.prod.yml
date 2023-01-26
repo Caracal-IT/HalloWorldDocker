@@ -13,14 +13,14 @@ services:
         context: ../..
         dockerfile: build/dockerCompose/HalloWorldMvc.Unit.Dockerfile
         args:          
-        - VERSION=${BUILD_NUMBER}
+        - VERSION:v${BUILD_NUMBER}
   mvcdocker:
     image: divigraph/demo1:v${BUILD_NUMBER}
     build:
       context: ../..
       dockerfile: build/dockerCompose/HalloWorldMvc.Image.Dockerfile
       args:
-        - VERSION=${BUILD_NUMBER}
+        - VERSION:v${BUILD_NUMBER}
     ports:
       - "5050:80"
       - "5151:443"
