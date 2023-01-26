@@ -2,13 +2,13 @@ version: "3.9"
 name: divigraph-demo-prod
 services:
   mvc:
-    image: divigraph/demo1_test:latest
+    image: divigraph/demo1_test:v${BUILD_NUMBER}
     build:
       context: ../..
       dockerfile: build/dockerCompose/HalloWorldMvc.Dockerfile  
         
   mvctest:
-      image: divigraph/demo1_test_unit:latest
+      image: divigraph/demo1_test_unit:v${BUILD_NUMBER}
       build:
         context: ../..
         dockerfile: build/dockerCompose/HalloWorldMvc.Unit.Dockerfile
