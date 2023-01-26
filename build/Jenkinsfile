@@ -18,8 +18,10 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'docker-compose -f build/dockerCompose/docker-compose.prod.yml up --build mvctest'
-                error 'Tests Fail'
+                script { 
+                    def test_result = sh(script: 'docker-compose -f build/dockerCompose/docker-compose.prod.yml up --build mvctest', returnStatus: true) 
+                    if (test_result != 0) { error 'Tests failed' } 
+                }
             }
         }
                 
