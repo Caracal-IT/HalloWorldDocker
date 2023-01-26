@@ -14,7 +14,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'docker-compose -f build/dockerCompose/docker-compose.prod.yml build mvc'
-                         }
+            }
         }
         stage('Test') {
             steps {
@@ -23,6 +23,9 @@ pipeline {
                     if (test_result != 0) { error 'Tests failed: HalloWorldDocker.Utilities.Tests.Unit' }
                 }
             }
+        }
+        stage('Publish') {
+            sh 'docker-compose -f build/dockerCompose/docker-compose.prod.yml build mvcdocker'
         }
         
         /*

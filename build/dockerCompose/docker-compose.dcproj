@@ -17,7 +17,8 @@
     </None>
     <None Include="docker-compose.prod.yml" />
     <None Include="docker-compose.yml" />
-    <None Include="HalloWorldMvc.Dockerfile" />
+    <None Include="HalloWorldMvc.Build.Dockerfile" />
+    <None Include="HalloWorldMvc.Image.Dockerfile" />
     <None Include="HalloWorldMvc.Unit.Dockerfile" />
   </ItemGroup>
   <ItemGroup>

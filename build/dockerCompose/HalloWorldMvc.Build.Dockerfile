@@ -7,6 +7,3 @@ RUN dotnet restore "HelloWorldDocker.Web.Mvc/HelloWorldDocker.Web.Mvc.csproj"
 COPY src .
 WORKDIR "/build/src/HelloWorldDocker.Web.Mvc"
 RUN dotnet build "HelloWorldDocker.Web.Mvc.csproj" -c Release -o /app/build
-
-FROM build AS publish
-RUN dotnet publish "HelloWorldDocker.Web.Mvc.csproj" -c Release -o /app/publish
